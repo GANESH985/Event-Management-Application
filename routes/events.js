@@ -1,5 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const request = require('request')
+const weatherData = require('./WeatherData')
 
 const router = express.Router()
 
@@ -50,13 +52,18 @@ router.delete('/:id', async (req, res) => {
 })
 
 
-router.get('/weather/:location', async (req, res) => {
-  try {
-    const city = req.query.city
-    const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.WEATHER_API_KEY}`)
-  } catch (error) {
-    res.status(400).json({ error: error.message })
+router.get('/weather/', async (req, res) => {
+  if(!req.query.address){
+    return res.send("Location is required!")
   }
+  weatherData(req.query.address,(error,result)=>{
+    if(error){
+      return res.send(error)
+    }
+    res.send(result)
+  })
+  
+
 })
 
 module.exports = router
