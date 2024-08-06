@@ -43,7 +43,7 @@ Once the deployment is complete, you will receive a URL for your backend service
 ## API Documentation
 Authentication
 Register a new user
-POST /api/auth/register
+## POST /api/auth/register
 
 ## Description: Register a new user.
 Request Body:
@@ -54,14 +54,15 @@ Request Body:
   "name": "John Doe"
 }
 Response:
-json
-Copy code
+
 {
   "_id": "user_id",
   "supabaseId": "supabase_user_id",
   "email": "user@example.com",
   "name": "John Doe"
 }
+
+
 Log in an existing user
 
 ## POST /api/auth/login
@@ -74,8 +75,6 @@ Request Body:
   "password": "password123"
 }
 Response:
-json
-Copy code
 {
   "user": {
     "_id": "user_id",
@@ -90,9 +89,10 @@ Copy code
 {
   "error": "Email not confirmed"
 }
+
 Events
 Create a new event
-POST /api/events/
+## POST /api/events/
 
 ## Description: Create a new event.
 Request Body:
@@ -113,8 +113,9 @@ Response:
   "_id": "66ad1a4d0ce03039012f3f56",
   "__v": 0
 }
-Retrieve all events for the logged-in user
-GET /api/events/
+
+## Retrieve all events for the logged-in user
+## GET /api/events/
 
 ## Description: Retrieve all events for the logged-in user.
 Query Parameters:
@@ -133,7 +134,7 @@ Response:
 
 ## Update an event by ID
 
-PUT /api/events/
+## PUT /api/events/
 
 Description: Update an event by ID.
 Request Body:
@@ -154,7 +155,7 @@ Response:
 }
 
 ## Delete an event by ID
-DELETE /api/events/
+## DELETE /api/events/
 
 Description: Delete an event by ID.
 Response:
@@ -181,7 +182,7 @@ Response:
 
 ## Weather
 Fetch weather information for a given location
-GET /api/weather/:location
+## GET http://localhost:5002/api/events/weather?address=Lahore
 
 Description: Fetch weather information for a given location.
 Response:
