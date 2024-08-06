@@ -4,9 +4,7 @@ This repository contains the backend code for the Event Management Application. 
 ## Backend Deployment on Render
 
 The backend of this application is deployed on Render. You can access it via the following link:
-## https://event-management-application.onrender.com/
-
-## Example API endpoint: https://event-management-application.onrender.com/api/events/
+## https://event-management-application-1.onrender.com/api/events
 
 ## Deployment Steps
 
